@@ -83,8 +83,8 @@ android {
         applicationId = "com.tankobun.app"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        versionCode = 49
-        versionName = "4.2.1"
+        versionCode = 50
+        versionName = "4.2.2"
         testInstrumentationRunner = "com.tankobun.app.NovelCompatibilityInstrumentation"
 
         val clientId = configValue("anilistClientId", "ANILIST_CLIENT_ID")

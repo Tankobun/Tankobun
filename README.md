@@ -122,6 +122,8 @@ The update manifest is only for official Tankobun app APK builds. It must not in
 
 Release APK updates must keep the same application id and signing lineage as the installed build, and each new release must use a higher `versionCode`.
 
+Official releases from 4.2.2 onward require the key rotation procedure in [Official APK signing](docs/release-signing.md).
+
 Before offering an APK to Android's installer, Tankobun requires a valid SHA-256, checks any declared byte size, and verifies the archive's package, version code/name and signing continuity against the installed app. Forward signing-key rotation must be verified by Android. Manifest and APK requests require HTTPS on every redirect.
 
 For release builds, set `tankobunUpdateManifestUrl` in `local.properties` or `TANKOBUN_UPDATE_MANIFEST_URL` in the environment. The default points to:
