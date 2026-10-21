@@ -255,7 +255,7 @@ internal enum class SettingsRoute {
     SOURCE_REPOSITORY,
 }
 
-internal const val TankobunGithubUrl = "https://github.com/JohanKRS/Tankobun"
+internal const val TankobunGithubUrl = "https://github.com/Tankobun/Tankobun"
 internal const val TankobunAniListUrl = "https://anilist.co"
 
 internal val SettingsDetailRoutes = listOf(

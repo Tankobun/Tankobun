@@ -50,7 +50,7 @@ class MangaBakaRepository(
             if (cacheable && !forceRefresh) cached()?.let { return@withLock it }
             val rate = if (path.endsWith("/search")) searchLimiter else limiter
             rate.awaitTurn()
-            val request = Request.Builder().url(url).header("User-Agent", "Tankobun (https://github.com/JohanKRS/Tankobun)")
+            val request = Request.Builder().url(url).header("User-Agent", "Tankobun (https://github.com/Tankobun/Tankobun)")
                 .header("Accept", "application/json").apply {
                     if (token != null) { header("Authorization", "Bearer $token"); cacheControl(CacheControl.Builder().noCache().noStore().build()) }
                     else if (forceRefresh) cacheControl(CacheControl.FORCE_NETWORK)

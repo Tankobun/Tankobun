@@ -4,9 +4,9 @@
   "stable": {
     "versionCode": 49,
     "versionName": "4.2.1",
-    "apkUrl": "https://github.com/JohanKRS/Tankobun/releases/download/v4.2.1/tankobun-4.2.1.apk",
+    "apkUrl": "https://github.com/Tankobun/Tankobun/releases/download/v4.2.1/tankobun-4.2.1.apk",
     "apkSha256": "64A3009558AE65F33C6B9592C84F92A15739276539384033377176D7D4698FD5",
-    "releaseUrl": "https://github.com/JohanKRS/Tankobun/releases/tag/v4.2.1",
+    "releaseUrl": "https://github.com/Tankobun/Tankobun/releases/tag/v4.2.1",
     "publishedAt": "2026-09-07T14:33:45Z",
     "sizeBytes": 14170992,
     "mandatory": false,

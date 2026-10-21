@@ -34,7 +34,7 @@ val releaseKeyPassword = signingValue("tankobunReleaseKeyPassword", "TANKOBUN_RE
 val updateManifestUrl = configValue(
     propertyName = "tankobunUpdateManifestUrl",
     envName = "TANKOBUN_UPDATE_MANIFEST_URL",
-    defaultValue = "https://johankrs.github.io/Tankobun/updates.json",
+    defaultValue = "https://tankobun.github.io/Tankobun/updates.json",
 )
 val hasReleaseSigning = listOf(
     releaseStoreFile,
