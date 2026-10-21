@@ -31,7 +31,7 @@ val releaseKeyPassword = signingValue("tankobunReleaseKeyPassword", "TANKOBUN_RE
 val updateManifestUrl = configValue(
     propertyName = "tankobunUpdateManifestUrl",
     envName = "TANKOBUN_UPDATE_MANIFEST_URL",
-    defaultValue = "https://johankrs.github.io/Tankobun/updates.json",
+    defaultValue = "https://tankobun.github.io/Tankobun/updates.json",
 )
 val hasReleaseSigning = listOf(
     releaseStoreFile,
@@ -48,8 +48,8 @@ android {
         applicationId = "com.tankobun.app"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        versionCode = 49
-        versionName = "4.2.1"
+        versionCode = 50
+        versionName = "4.2.2"
 
         val clientId = configValue("anilistClientId", "ANILIST_CLIENT_ID")
         buildConfigField("String", "ANILIST_CLIENT_ID", "\"$clientId\"")

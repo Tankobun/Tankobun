@@ -349,4 +349,4 @@ class AppContainer(application: Application) {
 private fun tankobunAniListUserAgent(): String =
     "Tankobun/${BuildConfig.VERSION_NAME} (Android; ${BuildConfig.APPLICATION_ID}; $TANKOBUN_GITHUB_URL)"
 
-private const val TANKOBUN_GITHUB_URL = "https://github.com/JohanKRS/Tankobun"
+private const val TANKOBUN_GITHUB_URL = "https://github.com/Tankobun/Tankobun"

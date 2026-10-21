@@ -27,3 +27,10 @@ qa-*.json
 qa-*.xml
 reader-*-screen.png
 tankobun-*.png
+
+# Private signing and rotation material
+*.p12
+*.pfx
+*.pk8
+*.key
+signing-private/

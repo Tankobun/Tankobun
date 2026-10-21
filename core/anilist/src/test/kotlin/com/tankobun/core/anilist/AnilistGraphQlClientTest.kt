@@ -11,7 +11,7 @@ import org.junit.Test
 class AnilistGraphQlClientTest {
     @Test
     fun sendsConfiguredUserAgent() = runTest {
-        val userAgent = "Tankobun/2.0.0 (Android; com.tankobun.app; https://github.com/JohanKRS/Tankobun)"
+        val userAgent = "Tankobun/2.0.0 (Android; com.tankobun.app; https://github.com/Tankobun/Tankobun)"
 
         MockWebServer().use { server ->
             server.start()

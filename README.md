@@ -95,10 +95,12 @@ The update manifest is only for official Tankobun app APK builds. It must not in
 
 Release APK updates must keep the same application id and signing lineage as the installed build, and each new release must use a higher `versionCode`.
 
+Official releases from 4.2.2 onward require the key rotation procedure in [Official APK signing](docs/release-signing.md).
+
 For release builds, set `tankobunUpdateManifestUrl` in `local.properties` or `TANKOBUN_UPDATE_MANIFEST_URL` in the environment. The default points to:
 
 ```text
-https://johankrs.github.io/Tankobun/updates.json
+https://tankobun.github.io/Tankobun/updates.json
 ```
 
 The app checks this manifest quietly at most once per day and also offers a manual check in Settings > About. Android still asks the user to confirm installation of downloaded APK updates.

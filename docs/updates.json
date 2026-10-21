@@ -2,38 +2,34 @@
   "type": "tankobun.update-manifest",
   "version": 1,
   "stable": {
-    "versionCode": 49,
-    "versionName": "4.2.1",
-    "apkUrl": "https://github.com/JohanKRS/Tankobun/releases/download/v4.2.1/tankobun-4.2.1.apk",
-    "apkSha256": "64A3009558AE65F33C6B9592C84F92A15739276539384033377176D7D4698FD5",
-    "releaseUrl": "https://github.com/JohanKRS/Tankobun/releases/tag/v4.2.1",
-    "publishedAt": "2026-09-07T14:33:45Z",
-    "sizeBytes": 14170992,
+    "versionCode": 50,
+    "versionName": "4.2.2",
+    "apkUrl": "https://github.com/Tankobun/Tankobun/releases/download/v4.2.2/tankobun-4.2.2.apk",
+    "apkSha256": "55D409B3FEB726C57656F94F03A124E13CC8F63C555A482163AFA32449E5ECF6",
+    "releaseUrl": "https://github.com/Tankobun/Tankobun/releases/tag/v4.2.2",
+    "publishedAt": "2026-10-21T13:29:45Z",
+    "sizeBytes": 14202859,
     "mandatory": false,
     "changelog": {
       "en": [
-        "Continue Reading now shows up to ten recent manga, preserving the original cover size.",
-        "When more than ten titles are available, a larger View my library card opens the Reading list directly. The card stays hidden when all titles fit.",
-        "Automatic AniList library refresh now runs when starting the app or returning after at least two hours away. No periodic checks while the app stays open; manual sync remains available.",
-        "Updated interface text in English, Brazilian Portuguese, Spanish, and Simplified Chinese."
+        "Updated the About link, app update address, and project links.",
+        "Updated APK signing while preserving compatibility with existing installations.",
+        "One-time manual update for 4.2.1 or earlier: install this APK over the existing app without uninstalling. Subsequent updates can be checked in the app."
       ],
       "pt-BR": [
-        "O Continuar lendo agora mostra até dez mangás recentes, mantendo o tamanho original das capas.",
-        "Quando há mais de dez títulos disponíveis, o cartão Ver minha biblioteca abre diretamente a lista Lendo. O cartão fica oculto quando todos os títulos cabem na faixa.",
-        "A atualização automática da biblioteca do AniList agora acontece ao iniciar o app ou voltar após pelo menos duas horas fora dele. Sem verificações periódicas enquanto o app está aberto; a sincronização manual continua disponível.",
-        "Textos da interface atualizados em inglês, português brasileiro, espanhol e chinês simplificado."
+        "Atualizados o link da tela Sobre, o endereço de atualização e os links do projeto.",
+        "Assinatura do APK atualizada, mantendo a compatibilidade com as instalações existentes.",
+        "Atualização manual necessária uma vez para a versão 4.2.1 ou anterior: instale este APK por cima do app existente, sem desinstalar. As próximas atualizações podem ser verificadas pelo app."
       ],
       "es": [
-        "Continuar leyendo ahora muestra hasta diez mangas recientes, conservando el tamaño original de las portadas.",
-        "Cuando hay más de diez títulos disponibles, la tarjeta Ver mi biblioteca abre directamente la lista Leyendo. La tarjeta permanece oculta cuando todos los títulos caben en la fila.",
-        "La actualización automática de la biblioteca de AniList ahora se realiza al iniciar la app o volver tras al menos dos horas sin usarla. No hay comprobaciones periódicas mientras la app sigue abierta; la sincronización manual continúa disponible.",
-        "Textos de la interfaz actualizados en inglés, portugués brasileño, español y chino simplificado."
+        "Actualizados el enlace de Acerca de, la dirección de actualización y los enlaces del proyecto.",
+        "Firma del APK actualizada, conservando la compatibilidad con las instalaciones existentes.",
+        "Actualización manual única para la versión 4.2.1 o anterior: instala este APK sobre la aplicación existente, sin desinstalarla. Las próximas actualizaciones se podrán comprobar desde la app."
       ],
       "zh-CN": [
-        "继续阅读现可显示最多十部最近阅读的漫画，并保留原有封面尺寸。",
-        "仅在有超过十部作品时显示更醒目的“查看我的书库”卡片，直接打开“阅读中”列表。所有作品均可显示时，该卡片会隐藏。",
-        "AniList 书库现在仅在启动应用或离开应用至少两小时后返回时自动更新。持续使用应用期间不会定期检查，仍可随时手动同步。",
-        "已更新英语、巴西葡萄牙语、西班牙语和简体中文的界面文本。"
+        "更新了“关于”页面链接、应用更新地址和项目链接。",
+        "更新了 APK 签名，保持与现有安装的兼容性。",
+        "4.2.1 及更早版本需要手动更新一次：请直接覆盖安装此 APK，不要卸载。之后可在应用内检查更新。"
       ]
     }
   }

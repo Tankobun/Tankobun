@@ -15,9 +15,9 @@ class AppUpdateDataSourceTest {
               "stable": {
                 "versionCode": 21,
                 "versionName": "2.0.1",
-                "apkUrl": "https://github.com/JohanKRS/Tankobun/releases/download/v2.0.1/tankobun-2.0.1.apk",
+                "apkUrl": "https://github.com/Tankobun/Tankobun/releases/download/v2.0.1/tankobun-2.0.1.apk",
                 "apkSha256": "sha256:abc123",
-                "releaseUrl": "https://github.com/JohanKRS/Tankobun/releases/tag/v2.0.1",
+                "releaseUrl": "https://github.com/Tankobun/Tankobun/releases/tag/v2.0.1",
                 "publishedAt": "2026-06-13T00:00:00Z",
                 "sizeBytes": 42,
                 "mandatory": false,
