@@ -9,8 +9,9 @@ internal const val NEXT_DOWNLOAD_WINDOW_SIZE = 10
 
 internal fun List<SourceChapter>.nextInReadingOrderAfter(chapter: SourceChapter): SourceChapter? {
     if (chapter.chapterNumber > 0f) {
-        return filter { it.chapterNumber > 0f && chapterReadingComparator.compare(it, chapter) > 0 }
-            .minWithOrNull(chapterReadingComparator)
+        val comparator = readingComparator()
+        return filter { it.chapterNumber > 0f && comparator.compare(it, chapter) > 0 }
+            .minWithOrNull(comparator)
     }
 
     val currentIndex = indexOfFirst { it.sourceId == chapter.sourceId && it.url == chapter.url }
@@ -19,8 +20,9 @@ internal fun List<SourceChapter>.nextInReadingOrderAfter(chapter: SourceChapter)
 
 internal fun List<SourceChapter>.previousInReadingOrderBefore(chapter: SourceChapter): SourceChapter? {
     if (chapter.chapterNumber > 0f) {
-        return filter { it.chapterNumber > 0f && chapterReadingComparator.compare(it, chapter) < 0 }
-            .maxWithOrNull(chapterReadingComparator)
+        val comparator = readingComparator()
+        return filter { it.chapterNumber > 0f && comparator.compare(it, chapter) < 0 }
+            .maxWithOrNull(comparator)
     }
 
     val currentIndex = indexOfFirst { it.sourceId == chapter.sourceId && it.url == chapter.url }
@@ -45,7 +47,7 @@ internal fun List<SourceChapter>.chapterNearProgress(progress: ReadingProgress):
 
 internal fun List<SourceChapter>.firstInReadingOrder(): SourceChapter? =
     filter { it.chapterNumber > 0f }
-        .minWithOrNull(chapterReadingComparator)
+        .minWithOrNull(readingComparator())
         ?: lastOrNull()
 
 internal fun nextTenDownloadCandidates(state: TankobunUiState): List<SourceChapter> {
@@ -85,7 +87,7 @@ internal fun List<SourceChapter>.trackerProgressForChapter(chapter: SourceChapte
 internal fun List<SourceChapter>.readingOrder(): List<SourceChapter> =
     if (any { it.chapterNumber > 0f }) {
         sortedWith(compareBy<SourceChapter> { it.chapterNumber <= 0f || !it.chapterNumber.isFinite() }
-            .then(chapterReadingComparator).thenBy { it.name })
+            .then(readingComparator()).thenBy { it.name })
     } else {
         asReversed()
     }
@@ -102,8 +104,24 @@ private val chapterReadingComparator = Comparator<SourceChapter> { left, right -
         leftVolumeNumber != null && rightVolumeNumber != null -> 0
         else -> leftVolume.compareTo(rightVolume)
     }
-    if (volumeOrder != 0) volumeOrder else compareValues(
+    if (volumeOrder != 0) volumeOrder else chapterNumberComparator.compare(left, right)
+}
+
+private val chapterNumberComparator = Comparator<SourceChapter> { left, right ->
+    compareValues(
         left.chapterNumberText?.toBigDecimalOrNull() ?: left.chapterNumber.toString().toBigDecimalOrNull(),
         right.chapterNumberText?.toBigDecimalOrNull() ?: right.chapterNumber.toString().toBigDecimalOrNull(),
     )
 }
+
+/**
+ * Volumes only order a list when every numbered chapter has one (numbering that restarts per volume).
+ * Sources commonly leave the newest chapters without a volume until it is collected; ordering those
+ * by volume would put them before volume 1, so mixed lists keep the plain chapter-number order.
+ */
+private fun List<SourceChapter>.readingComparator(): Comparator<SourceChapter> =
+    if (filter { it.chapterNumber > 0f }.all { it.chapterVolumeKey().isNotEmpty() }) {
+        chapterReadingComparator
+    } else {
+        chapterNumberComparator
+    }

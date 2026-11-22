@@ -25,6 +25,22 @@ class ReaderChapterOrderingTest {
     }
 
     @Test
+    fun chaptersWithoutVolumeKeepNumberOrderWhenOthersHaveOne() {
+        val chapters = listOf(
+            chapter("c4", 4f).copy(name = "Ch. 4"),
+            chapter("c3", 3f).copy(name = "Ch. 3"),
+            chapter("c2", 2f).copy(name = "Vol. 1 Ch. 2"),
+            chapter("c1", 1f).copy(name = "Vol. 1 Ch. 1"),
+        )
+
+        assertEquals(listOf("c1", "c2", "c3", "c4"), chapters.readingOrder().map { it.url })
+        assertEquals(chapters[0], chapters.nextInReadingOrderAfter(chapters[1]))
+        assertEquals(chapters[1], chapters.nextInReadingOrderAfter(chapters[2]))
+        assertEquals(chapters[2], chapters.previousInReadingOrderBefore(chapters[1]))
+        assertEquals(chapters[3], chapters.firstInReadingOrder())
+    }
+
+    @Test
     fun trackerProgressUsesParsedChapterNumberWhenAvailable() {
         val chapters = listOf(chapter("c1", 1f), chapter("c2", 2.5f), chapter("c3", 3f))
 
